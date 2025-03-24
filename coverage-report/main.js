@@ -213,8 +213,8 @@ var assemblies = [
   {
     "name": "Calculator",
     "classes": [
-      { "name": "Calculator.CachedCalculator", "rp": "Calculator_CachedCalculator.html", "cl": 31, "ucl": 22, "cal": 53, "tl": 88, "cb": 3, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Calculator.SimpleCalculator", "rp": "Calculator_SimpleCalculator.html", "cl": 3, "ucl": 30, "cal": 33, "tl": 57, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.CachedCalculator", "rp": "Calculator_CachedCalculator.html", "cl": 53, "ucl": 0, "cal": 53, "tl": 88, "cb": 14, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.SimpleCalculator", "rp": "Calculator_SimpleCalculator.html", "cl": 33, "ucl": 0, "cal": 33, "tl": 57, "cb": 10, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
@@ -223,17 +223,9 @@ var metrics = [{ "name": "Crap Score", "abbreviation": "crp", "explanationUrl": 
 var historicCoverageExecutionTimes = [];
 
 var riskHotspotMetrics = [
-      { "name": "Crap Score", "explanationUrl": "https://googletesting.blogspot.de/2011/02/this-code-is-crap.html" },
-      { "name": "Cyclomatic complexity", "explanationUrl": "https://en.wikipedia.org/wiki/Cyclomatic_complexity" },
 ];
 
 var riskHotspots = [
-  {
-    "assembly": "Calculator", "class": "Calculator.SimpleCalculator", "reportPath": "Calculator_SimpleCalculator.html", "methodName": "IsPrime(System.Int32)", "methodShortName": "IsPrime(...)", "fileIndex": 0, "line": 42,
-    "metrics": [
-      { "value": 42, "exceeded": true },
-      { "value": 6, "exceeded": false },
-    ]},
 ];
 
 var branchCoverageAvailable = true;
