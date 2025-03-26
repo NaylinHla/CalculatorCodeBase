@@ -20,29 +20,29 @@ jobs:
           dotnet tool install -g dotnet-reportgenerator-globaltool
 
       - name: Start Static Code Analysis
-        run: | # INSERT RELEVANT VARIABLES BELOW
+        run: |
           dotnet sonarscanner begin \
-          /k:"ProjectDevOpsCalculator" \ 
+          /k:"ProjectDevOpsCalculator" \
           /d:sonar.host.url="http://62.164.217.208:9000/" \
           /d:sonar.token="sqp_4ef7af9a00cbd25e3a72a6b296953471e9aa6bf9" \
           /d:sonar.coverageReportPaths="coverage-report/SonarQube.xml" \
           /d:sonar.qualitygate.wait=true \
           /d:sonar.qualitygate.timeout=300
 
-          - name: Build
-            run: dotnet build
+      - name: Build
+        run: dotnet build
 
-          - name: Run unit tests
-            run: dotnet test --collect:"XPlat Code Coverage" --results-directory TestResults
+      - name: Run unit tests
+        run: dotnet test --collect:"XPlat Code Coverage" --results-directory TestResults
 
-          - name: Generate report
-            run: |
-              reportgenerator \
-              -reports:TestResults/**/coverage.cobertura.xml \
-              -targetdir:coverage-report \
-              -reporttypes:SonarQube
+      - name: Generate report
+        run: |
+          reportgenerator \
+          -reports:TestResults/**/coverage.cobertura.xml \
+          -targetdir:coverage-report \
+          -reporttypes:SonarQube
 
-          - name: Complete Static Code Analysis
-            run: | # INSERT RELEVANT VARIABLES BELOW
-              dotnet sonarscanner end \
-                /d:sonar.token="sqp_4ef7af9a00cbd25e3a72a6b296953471e9aa6bf9"
+      - name: Complete Static Code Analysis
+        run: |
+          dotnet sonarscanner end \
+          /d:sonar.token="sqp_4ef7af9a00cbd25e3a72a6b296953471e9aa6bf9"
