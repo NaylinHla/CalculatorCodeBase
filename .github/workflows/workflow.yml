@@ -45,3 +45,4 @@ jobs:
         run: | # INSERT RELEVANT VARIABLES BELOW
           dotnet sonarscanner end \
             /d:sonar.token="sqp_4ef7af9a00cbd25e3a72a6b296953471e9aa6bf9"
+    runs-on:
