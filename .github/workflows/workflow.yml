@@ -22,9 +22,9 @@ jobs:
       - name: Start Static Code Analysis
         run: |
           dotnet sonarscanner begin \
-          /k:"ProjectDevOpsCalculator" \
-          /d:sonar.host.url="http://62.164.217.208:9000/" \
-          /d:sonar.token="sqp_4ef7af9a00cbd25e3a72a6b296953471e9aa6bf9" \
+          /k:"${{ vars.PROJECT_KEY }}" \
+          /d:sonar.host.url="${{ vars.PROJECT_URL }}" \
+          /d:sonar.token="${{ vars.PROJECT_TOKEN }}" \
           /d:sonar.coverageReportPaths="coverage-report/SonarQube.xml" \
           /d:sonar.qualitygate.wait=true \
           /d:sonar.qualitygate.timeout=300
